@@ -1,0 +1,44 @@
+SELECT cars.car_model, customer.customer_firstname
+FROM customer
+INNER JOIN reservation ON customer_id = fk_customer_id
+INNER JOIN cars ON car_id = fk_car_id
+
+
+
+
+SELECT cars.car_availability, customer.customer_firstname, cars.car_model
+FROM customer
+INNER JOIN reservation ON customer_id = fk_customer_id
+INNER JOIN cars ON car_id = fk_car_id
+
+
+
+
+SELECT customer.customer_firstname, customer.customer_lastname, invoice.invoice_type
+FROM customer
+INNER JOIN reservation ON customer_id = fk_customer_id
+INNER JOIN invoice On invoice_id = fk_invoice_id
+
+
+
+
+SELECT customer.customer_firstname, customer.customer_lastname, invoice.invoice_type
+FROM customer
+INNER JOIN reservation ON customer_id = fk_customer_id
+INNER JOIN invoice On invoice_id = fk_invoice_id
+WHERE invoice_type ='cash'
+
+
+
+SELECT customer.customer_firstname, customer.customer_lastname, reservation.reservation_end_station
+FROM customer
+INNER JOIN reservation ON customer_id = fk_customer_id
+WHERE reservation.reservation_end_station = 'Vienna'
+
+
+
+SELECT customer.customer_firstname, customer.customer_lastname, cars.car_availability
+FROM customer
+INNER JOIN reservation ON customer_id = fk_customer_id
+INNER JOIN cars ON car_id = fk_car_id
+WHERE cars.car_availability = '1'
